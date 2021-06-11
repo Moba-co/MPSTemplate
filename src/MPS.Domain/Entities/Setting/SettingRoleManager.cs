@@ -1,10 +1,10 @@
 using System;
-using Moba.Domain.Core.Interfaces;
-using Moba.Domain.Core.Services;
-using Moba.Domain.Core;
-using Moba.Domain.Entities.Security;
+using MPS.Domain.Core.Interfaces;
+using MPS.Domain.Core.Services;
+using MPS.Domain.Core;
+using MPS.Domain.Entities.Security;
 
-namespace Moba.Domain.Entities.Setting
+namespace MPS.Domain.Entities.Setting
 {
     public class SettingRoleManager : BaseEntity<string>, IRegisterer<string, User>
 

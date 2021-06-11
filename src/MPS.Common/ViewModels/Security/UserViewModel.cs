@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Moba.Common.Attributes;
-using Moba.Domain.Entities.Security;
+using MPS.Common.Attributes;
+using MPS.Domain.Entities.Security;
 
-namespace Moba.Common.ViewModels.Security
+namespace MPS.Common.ViewModels.Security
 {
     [DtoFor(typeof(User))]
     public class UserViewModel

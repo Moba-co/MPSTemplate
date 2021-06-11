@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
-using Moba.Domain.Core.Interfaces;
+using MPS.Domain.Core.Interfaces;
 
-namespace Moba.Domain.Entities.Security
+namespace MPS.Domain.Entities.Security
 {
     public class UserLogin : IdentityUserLogin<string>, IEntity
     {

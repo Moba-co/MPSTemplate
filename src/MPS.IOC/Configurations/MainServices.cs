@@ -1,25 +1,25 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
-using Moba.Data.EF.Context;
-using Moba.Data.EF.Interfaces.UOW;
-using Moba.Data.EF.Services.UOW;
-using Moba.Domain.Entities.Security;
-using Moba.IOC.Configurations.Identity;
-using Moba.Services.Interfaces;
-using Moba.Services.Interfaces.FileManager;
-using Moba.Services.Interfaces.RoleManager;
-using Moba.Services.Services;
-using Moba.Services.Services.RoleManager;
+using MPS.Data.EF.Context;
+using MPS.Data.EF.Interfaces.UOW;
+using MPS.Data.EF.Services.UOW;
+using MPS.Domain.Entities.Security;
+using MPS.IOC.Configurations.Identity;
+using MPS.Services.Interfaces;
+using MPS.Services.Interfaces.FileManager;
+using MPS.Services.Interfaces.RoleManager;
+using MPS.Services.Services;
+using MPS.Services.Services.RoleManager;
 using System;
 
-namespace Moba.IOC.Configurations
+namespace MPS.IOC.Configurations
 {
     public static class MainServices
     {
         public static void AddMainServices(this IServiceCollection services)
         {
-            services.AddScoped<MobaDbContext>();
+            services.AddScoped<MPSDbContext>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IFileManager, FileManager>();
             services.AddScoped<IRoleManagerHelper, RoleManagerHelper>();

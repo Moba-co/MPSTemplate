@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Moba.Common.DTOs;
-using Moba.Common.DTOs.FileManger;
-using Moba.Common.ViewModels.FileManager;
-using Moba.Domain.Enums;
-using Moba.Services.Interfaces.FileManager;
+using MPS.Common.DTOs;
+using MPS.Common.DTOs.FileManger;
+using MPS.Common.ViewModels.FileManager;
+using MPS.Domain.Enums;
+using MPS.Services.Interfaces.FileManager;
 
-namespace Moba.Services.Services
+namespace MPS.Services.Services
 {
     public class FileManager : IFileManager
     {

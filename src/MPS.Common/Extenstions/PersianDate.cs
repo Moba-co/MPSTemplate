@@ -1,7 +1,7 @@
 using System;
 using System.Globalization;
 
-namespace Moba.Common.Extenstions
+namespace MPS.Common.Extenstions
 {
     public static class PersianDate
     {

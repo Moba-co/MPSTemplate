@@ -1,4 +1,4 @@
-namespace Moba.Common.ViewModels.Security.RoleManager
+namespace MPS.Common.ViewModels.Security.RoleManager
 {
     public class ActionAndControllerNameViewModel
     {

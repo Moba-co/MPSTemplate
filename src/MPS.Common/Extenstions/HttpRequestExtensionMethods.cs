@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Http;
 
-namespace Moba.Common.Extenstions
+namespace MPS.Common.Extenstions
 {
     public static class HttpRequestExtensionMethods
     {

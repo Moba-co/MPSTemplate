@@ -1,7 +1,7 @@
 using System;
 using System.Reflection.Metadata;
 
-namespace Moba.Domain.Core.Interfaces
+namespace MPS.Domain.Core.Interfaces
 {
     public interface IRegisterer<TRegistererId, TUser>
     {

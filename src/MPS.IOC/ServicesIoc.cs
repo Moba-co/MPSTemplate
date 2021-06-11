@@ -1,8 +1,8 @@
 using System.Linq;
 using Microsoft.Extensions.DependencyInjection;
-using Moba.Services.Services;
+using MPS.Services.Services;
 
-namespace Moba.IOC
+namespace MPS.IOC
 {
     public static class ServicesIoc
     {

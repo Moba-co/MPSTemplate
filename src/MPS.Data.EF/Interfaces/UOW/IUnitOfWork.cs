@@ -1,10 +1,10 @@
 using System;
 using System.Threading.Tasks;
-using Moba.Data.EF.Interfaces.Repositories;
-using Moba.Domain.Entities.Security;
-using Moba.Domain.Entities.Setting;
+using MPS.Data.EF.Interfaces.Repositories;
+using MPS.Domain.Entities.Security;
+using MPS.Domain.Entities.Setting;
 
-namespace Moba.Data.EF.Interfaces.UOW
+namespace MPS.Data.EF.Interfaces.UOW
 {
     public interface IUnitOfWork : IDisposable
     {

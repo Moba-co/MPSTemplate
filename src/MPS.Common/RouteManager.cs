@@ -1,4 +1,4 @@
-﻿namespace Moba.Common
+﻿namespace MPS.Common
 {
     public static class RouteManager
     {

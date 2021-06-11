@@ -1,8 +1,8 @@
-﻿using Moba.Domain.Core;
+﻿using MPS.Domain.Core;
 using System;
 using System.Linq;
 
-namespace Moba.Common.Helpers
+namespace MPS.Common.Helpers
 {
     public static class EnumHelper
     {

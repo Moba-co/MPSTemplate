@@ -1,7 +1,7 @@
-﻿using Moba.Common.DTOs.FileManger;
+﻿using MPS.Common.DTOs.FileManger;
 using System.Collections.Generic;
 
-namespace Moba.Common.ViewModels.FileManager
+namespace MPS.Common.ViewModels.FileManager
 {
     public class FileViewModel
     {

@@ -5,11 +5,11 @@ using System.Net.Mail;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Moba.Common.DTOs;
-using Moba.Common.ViewModels.Base;
-using Moba.Services.Interfaces.Senders;
+using MPS.Common.DTOs;
+using MPS.Common.ViewModels.Base;
+using MPS.Services.Interfaces.Senders;
 
-namespace Moba.Services.Services.Senders
+namespace MPS.Services.Services.Senders
 {
     public class EmailSender :  ISender
     {

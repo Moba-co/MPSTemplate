@@ -3,13 +3,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
-using Moba.Common.Helpers;
-using Moba.Domain.Entities.Security;
-using Moba.Services.Interfaces;
-using Moba.Services.Services;
-using Moba.Services.Services.DbInitializer;
+using MPS.Common.Helpers;
+using MPS.Domain.Entities.Security;
+using MPS.Services.Interfaces;
+using MPS.Services.Services;
+using MPS.Services.Services.DbInitializer;
 
-namespace Moba.IOC.Configurations.Identity
+namespace MPS.IOC.Configurations.Identity
 {
     public static class IdentityServicesRegistry
     {
@@ -18,7 +18,7 @@ namespace Moba.IOC.Configurations.Identity
             services.AddIdentityOptions();
             services.AddScoped<SignInManager<User>, SignInManager<User>>();
             services.AddScoped<UserManager<User>, UserManager<User>>();
-            services.AddScoped<MobaUserManager, MobaUserManager>();
+            services.AddScoped<MPSUserManager, MPSUserManager>();
             services.AddScoped<RoleManager<Role>, RoleManager<Role>>();
             services.AddScoped<IIdentityDbInitializer, IdentityDbInitializer>();
             services.AddScoped<PersianIdentityErrorDescriber>();

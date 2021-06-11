@@ -1,8 +1,8 @@
 using System;
 using AutoMapper;
-using Moba.Data.EF.Interfaces.UOW;
+using MPS.Data.EF.Interfaces.UOW;
 
-namespace Moba.Services.Services
+namespace MPS.Services.Services
 {
     public class BaseService : IDisposable
     {

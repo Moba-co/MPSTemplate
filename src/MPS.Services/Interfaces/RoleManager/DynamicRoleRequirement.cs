@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Authorization;
-namespace Moba.Services.Interfaces.RoleManager
+namespace MPS.Services.Interfaces.RoleManager
 {
     public class DynamicRoleRequirement : IAuthorizationRequirement
     {

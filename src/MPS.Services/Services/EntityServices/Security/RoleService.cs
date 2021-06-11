@@ -1,17 +1,17 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Caching.Memory;
-using Moba.Common.DTOs;
-using Moba.Common.Helpers;
-using Moba.Common.ViewModels.Security;
-using Moba.Data.EF.Helpers;
-using Moba.Data.EF.Interfaces.UOW;
-using Moba.Data.EF.Services;
-using Moba.Domain.Core.Services;
-using Moba.Domain.Entities.Security;
-using Moba.Domain.Entities.Setting;
-using Moba.Services.Interfaces.EntityServices.Security;
-using Moba.Services.Interfaces.RoleManager;
+using MPS.Common.DTOs;
+using MPS.Common.Helpers;
+using MPS.Common.ViewModels.Security;
+using MPS.Data.EF.Helpers;
+using MPS.Data.EF.Interfaces.UOW;
+using MPS.Data.EF.Services;
+using MPS.Domain.Core.Services;
+using MPS.Domain.Entities.Security;
+using MPS.Domain.Entities.Setting;
+using MPS.Services.Interfaces.EntityServices.Security;
+using MPS.Services.Interfaces.RoleManager;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +20,7 @@ using System.Reflection;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace Moba.Services.Services.EntityServices.Security
+namespace MPS.Services.Services.EntityServices.Security
 {
     public class RoleService : BaseService, IRoleService
     {

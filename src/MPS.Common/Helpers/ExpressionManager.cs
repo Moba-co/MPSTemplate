@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Moba.Common.Helpers
+namespace MPS.Common.Helpers
 {
     public static class ExpressionManager
     {

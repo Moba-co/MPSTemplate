@@ -3,9 +3,9 @@ using System.Linq;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Routing;
-using Moba.Common.DTOs;
+using MPS.Common.DTOs;
 
-namespace Moba.Common.Extensions.HtmlHelpers
+namespace MPS.Common.Extensions.HtmlHelpers
 {
     public static class HtmlExtension
     {

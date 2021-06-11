@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Moba.Common.DTOs
+namespace MPS.Common.DTOs
 {
     public class JobSchedule
     {

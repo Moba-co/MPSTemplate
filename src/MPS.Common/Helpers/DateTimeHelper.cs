@@ -1,6 +1,6 @@
 using System;
 
-namespace Moba.Common.Helpers
+namespace MPS.Common.Helpers
 {
     public static class DateTimeHelper
     {

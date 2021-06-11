@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Moba.Common.DTOs;
+using MPS.Common.DTOs;
 
-namespace Moba.Services.Interfaces.Senders
+namespace MPS.Services.Interfaces.Senders
 {
     public interface ISender
     {

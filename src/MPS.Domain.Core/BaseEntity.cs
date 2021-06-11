@@ -1,6 +1,6 @@
-using Moba.Domain.Core.Interfaces;
+using MPS.Domain.Core.Interfaces;
 
-namespace Moba.Domain.Core
+namespace MPS.Domain.Core
 {
     public abstract class BaseEntity<T> : IEntity<T>
     { 

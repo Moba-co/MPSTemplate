@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Moba.Common.ViewModels.Security
+namespace MPS.Common.ViewModels.Security
 {
     public class ForgotPassWordViewModel
     {

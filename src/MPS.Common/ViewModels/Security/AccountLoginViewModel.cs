@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Authentication;
-using Moba.Common.Attributes;
-using Moba.Domain.Entities.Security;
+using MPS.Common.Attributes;
+using MPS.Domain.Entities.Security;
 
-namespace Moba.Common.ViewModels.Security
+namespace MPS.Common.ViewModels.Security
 {
     [DtoFor(typeof(User))]
     public class AccountLoginViewModel
@@ -14,7 +14,7 @@ namespace Moba.Common.ViewModels.Security
         [DataType(DataType.PhoneNumber)]
         public string PhoneNumber { get; set; }
 
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [Required(ErrorMessage = "بلطفا {0} را وارد کنید")]
         [Display(Name = "رمز عبوز")]
         [DataType(DataType.Password)]
         public string Password { get; set; }

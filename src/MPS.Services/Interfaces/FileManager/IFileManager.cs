@@ -1,11 +1,11 @@
-using Moba.Common.DTOs.FileManger;
-using Moba.Common.DTOs;
-using Moba.Common.ViewModels.FileManager;
+using MPS.Common.DTOs.FileManger;
+using MPS.Common.DTOs;
+using MPS.Common.ViewModels.FileManager;
 using System.Threading.Tasks;
-using Moba.Domain.Enums;
+using MPS.Domain.Enums;
 using Microsoft.AspNetCore.Http;
 
-namespace Moba.Services.Interfaces.FileManager
+namespace MPS.Services.Interfaces.FileManager
 {
     public interface IFileManager
     {

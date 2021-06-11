@@ -2,24 +2,24 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Design;
-using Moba.Data.EF.Configuration;
-using Moba.Data.EF.Context.Extenstions;
-using Moba.Domain.Core.Interfaces;
-using Moba.Domain.Entities.Security;
+using MPS.Data.EF.Configuration;
+using MPS.Data.EF.Context.Extenstions;
+using MPS.Domain.Core.Interfaces;
+using MPS.Domain.Entities.Security;
 
-namespace Moba.Data.EF.Context
+namespace MPS.Data.EF.Context
 {
-    public class MobaDbContext : IdentityDbContext<User, Role, string, UserClaim, UserRole, UserLogin, RoleClaim, UserToken>
+    public class MPSDbContext : IdentityDbContext<User, Role, string, UserClaim, UserRole, UserLogin, RoleClaim, UserToken>
     {
         //private string DbConnection { get; }
-        public MobaDbContext(DbContextOptions<MobaDbContext> dbContextOptions) : base(dbContextOptions)
+        public MPSDbContext(DbContextOptions<MPSDbContext> dbContextOptions) : base(dbContextOptions)
         {
             //DbConnection = configuration.GetConnectionString("DefaultConnection");
             base.ChangeTracker.CascadeDeleteTiming = CascadeTiming.OnSaveChanges;
             base.ChangeTracker.DeleteOrphansTiming = CascadeTiming.OnSaveChanges;
         }
 
-        public MobaDbContext()
+        public MPSDbContext()
         {
 
         }
@@ -38,14 +38,14 @@ namespace Moba.Data.EF.Context
         }
     }
 
-    public class BloggingContextFactory : IDesignTimeDbContextFactory<MobaDbContext>
+    public class BloggingContextFactory : IDesignTimeDbContextFactory<MPSDbContext>
     {
-        public MobaDbContext CreateDbContext(string[] args)
+        public MPSDbContext CreateDbContext(string[] args)
         {
-            var optionsBuilder = new DbContextOptionsBuilder<MobaDbContext>();
-            optionsBuilder.UseSqlServer("Server=.;Database=Moba_db;Trusted_Connection=True;MultipleActiveResultSets=true");
+            var optionsBuilder = new DbContextOptionsBuilder<MPSDbContext>();
+            optionsBuilder.UseSqlServer("Server=.;Database=MPS_db;Trusted_Connection=True;MultipleActiveResultSets=true");
 
-            return new MobaDbContext(optionsBuilder.Options);
+            return new MPSDbContext(optionsBuilder.Options);
         }
     }
 }

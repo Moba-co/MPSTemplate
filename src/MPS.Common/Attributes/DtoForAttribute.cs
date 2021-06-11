@@ -1,6 +1,6 @@
 using System;
 
-namespace Moba.Common.Attributes
+namespace MPS.Common.Attributes
 {
     [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
     public sealed class DtoForAttribute : Attribute

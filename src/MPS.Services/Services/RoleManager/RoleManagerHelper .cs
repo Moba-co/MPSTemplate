@@ -1,15 +1,15 @@
 using System;
-using Moba.Services.Interfaces.RoleManager;
+using MPS.Services.Interfaces.RoleManager;
 using System.Linq;
 using System.Threading.Tasks;
-using Moba.Data.EF.Interfaces.UOW;
+using MPS.Data.EF.Interfaces.UOW;
 using System.Collections.Generic;
 using System.Reflection;
 using Microsoft.AspNetCore.Mvc;
-using Moba.Common.ViewModels.Security.RoleManager;
-using Moba.Domain.Entities.Setting;
+using MPS.Common.ViewModels.Security.RoleManager;
+using MPS.Domain.Entities.Setting;
 
-namespace Moba.Services.Services.RoleManager
+namespace MPS.Services.Services.RoleManager
 {
     public class RoleManagerHelper : IRoleManagerHelper
     {

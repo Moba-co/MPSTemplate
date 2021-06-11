@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Moba.Domain.Entities.Security;
+using MPS.Domain.Entities.Security;
 
-namespace Moba.Data.EF.Configuration.Auth
+namespace MPS.Data.EF.Configuration.Auth
 {
     public class UserEntityTypeConfiguration: IBaseEntityTypeConfiguration<User>
     {

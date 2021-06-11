@@ -5,13 +5,13 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using Moba.Common.ViewModels.Security;
-using Moba.Data.EF.Interfaces.UOW;
-using Moba.Domain.Entities.Security;
-using Moba.Services.Interfaces.EntityServices.Security;
+using MPS.Common.ViewModels.Security;
+using MPS.Data.EF.Interfaces.UOW;
+using MPS.Domain.Entities.Security;
+using MPS.Services.Interfaces.EntityServices.Security;
 // ReSharper disable PossibleNullReferenceException
 
-namespace Moba.Services.Services.EntityServices.Security
+namespace MPS.Services.Services.EntityServices.Security
 {
     public class AuthService : BaseService, IAuthService
     {

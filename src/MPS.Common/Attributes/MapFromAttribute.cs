@@ -1,6 +1,6 @@
 using System;
 
-namespace Moba.Common.Attributes
+namespace MPS.Common.Attributes
 {
     [System.AttributeUsage(AttributeTargets.Property, Inherited = false, AllowMultiple = false)]
     public sealed class MapFromAttribute : Attribute

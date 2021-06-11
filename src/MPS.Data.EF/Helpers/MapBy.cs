@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Moba.Data.EF.Helpers
+namespace MPS.Data.EF.Helpers
 {
     public class MapBy<TViewModel>
     {

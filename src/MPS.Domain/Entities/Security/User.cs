@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity;
-using Moba.Domain.Core.Interfaces;
-using Moba.Domain.Core.Services;
-using Moba.Domain.Entities.Setting;
+using MPS.Domain.Core.Interfaces;
+using MPS.Domain.Core.Services;
+using MPS.Domain.Entities.Setting;
 
-namespace Moba.Domain.Entities.Security
+namespace MPS.Domain.Entities.Security
 {
     public class User : IdentityUser<string>, IRegisterer<string, User>, IModifier<string, User>, ISoftDelete, IEntity
     {

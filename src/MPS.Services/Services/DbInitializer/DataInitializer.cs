@@ -6,21 +6,21 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Moba.Common.ViewModels.Base;
-using Moba.Data.EF.Context;
-using Moba.Domain.Entities.Security;
-using Moba.Services.Interfaces;
-using Moba.Services.Interfaces.EntityServices.Security;
-using Moba.Services.Interfaces.RoleManager;
+using MPS.Common.ViewModels.Base;
+using MPS.Data.EF.Context;
+using MPS.Domain.Entities.Security;
+using MPS.Services.Interfaces;
+using MPS.Services.Interfaces.EntityServices.Security;
+using MPS.Services.Interfaces.RoleManager;
 // ReSharper disable All
 
-namespace Moba.Services.Services.DbInitializer
+namespace MPS.Services.Services.DbInitializer
 {
     public class DataInitializer
     {
         public static async Task Seed(IServiceProvider serviceProvider)
         {
-            await using var context = serviceProvider.GetRequiredService<MobaDbContext>();
+            await using var context = serviceProvider.GetRequiredService<MPSDbContext>();
             await context.Database.EnsureCreatedAsync();
             if (context.Database != null)
             {
@@ -61,7 +61,7 @@ namespace Moba.Services.Services.DbInitializer
         public void Initialize()
         {
             using var serviceScope = _scopeFactory.CreateScope();
-            using var context = serviceScope.ServiceProvider.GetService<MobaDbContext>();
+            using var context = serviceScope.ServiceProvider.GetService<MPSDbContext>();
             //context?.Database.Migrate();
         }
 

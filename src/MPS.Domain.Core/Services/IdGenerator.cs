@@ -1,5 +1,5 @@
 using System;
-namespace Moba.Domain.Core.Services
+namespace MPS.Domain.Core.Services
 {
     public static class IdGenerator
     {

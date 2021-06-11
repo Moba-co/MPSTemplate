@@ -3,7 +3,7 @@ using System.Linq;
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 
-namespace Moba.Data.EF.Context.Extenstions
+namespace MPS.Data.EF.Context.Extenstions
 {
     public static class DbContextExtensions
     {

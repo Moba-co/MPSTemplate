@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
-using Moba.Common.ViewModels.Security;
-using Moba.Domain.Entities.Security;
+using MPS.Common.ViewModels.Security;
+using MPS.Domain.Entities.Security;
 
-namespace Moba.Services.Interfaces.EntityServices.Security
+namespace MPS.Services.Interfaces.EntityServices.Security
 {
     public interface IAuthService
     {

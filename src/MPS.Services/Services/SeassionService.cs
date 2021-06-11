@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
-using Moba.Services.Interfaces;
+using MPS.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Moba.Services.Services
+namespace MPS.Services.Services
 {
     public class SessionService : ISessionService
     {

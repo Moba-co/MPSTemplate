@@ -1,4 +1,4 @@
-namespace Moba.Common.ViewModels.Base
+namespace MPS.Common.ViewModels.Base
 {
     public class SiteSettings
     {

@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using Moba.Common.DTOs;
-using Moba.Services.Interfaces.Senders;
-using Moba.Common.Helpers;
-using Moba.Common.ViewModels.Base;
+using MPS.Common.DTOs;
+using MPS.Services.Interfaces.Senders;
+using MPS.Common.Helpers;
+using MPS.Common.ViewModels.Base;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Nancy.Json;
 using System.Web;
 using System.Collections.Specialized;
 
-namespace Moba.Services.Services.Senders
+namespace MPS.Services.Services.Senders
 {
     public class SmsSender : ISender
     {

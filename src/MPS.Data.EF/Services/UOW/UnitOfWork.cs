@@ -3,22 +3,22 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using Moba.Data.EF.Context;
-using Moba.Data.EF.Interfaces.Repositories;
-using Moba.Data.EF.Interfaces.UOW;
-using Moba.Data.EF.Services.Repositories;
-using Moba.Domain.Entities.Security;
-using Moba.Domain.Entities.Setting;
+using MPS.Data.EF.Context;
+using MPS.Data.EF.Interfaces.Repositories;
+using MPS.Data.EF.Interfaces.UOW;
+using MPS.Data.EF.Services.Repositories;
+using MPS.Domain.Entities.Security;
+using MPS.Domain.Entities.Setting;
 // ReSharper disable InconsistentNaming
 
-namespace Moba.Data.EF.Services.UOW
+namespace MPS.Data.EF.Services.UOW
 {
     public class UnitOfWork : IUnitOfWork
     {
         #region ctor
         private readonly IMapper _mapper;
-        private readonly MobaDbContext _context;
-        public UnitOfWork(MobaDbContext context, IMapper mapper)
+        private readonly MPSDbContext _context;
+        public UnitOfWork(MPSDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

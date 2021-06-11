@@ -7,17 +7,17 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Moba.IOC.Configurations.Mapper;
-using Moba.Common.ViewModels.Base;
-using Moba.Data.EF.Context;
-using Moba.IOC.Configurations.ToastNotify;
-using Moba.Services.Interfaces.RoleManager;
-using Moba.Services.Services.RoleManager;
+using MPS.IOC.Configurations.Mapper;
+using MPS.Common.ViewModels.Base;
+using MPS.Data.EF.Context;
+using MPS.IOC.Configurations.ToastNotify;
+using MPS.Services.Interfaces.RoleManager;
+using MPS.Services.Services.RoleManager;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Moba.IOC.Configurations;
-using Moba.Services.Services.SignalR;
-using Moba.IOC.Configurations.Identity;
+using MPS.IOC.Configurations;
+using MPS.Services.Services.SignalR;
+using MPS.IOC.Configurations.Identity;
 
 namespace MPS.WebApp.MVC
 {
@@ -35,7 +35,7 @@ namespace MPS.WebApp.MVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<MobaDbContext>(options =>
+            services.AddDbContext<MPSDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();

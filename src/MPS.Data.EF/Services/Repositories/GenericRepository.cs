@@ -7,23 +7,23 @@ using System.Threading.Tasks;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
-using Moba.Data.EF.Context;
-using Moba.Data.EF.Helpers;
-using Moba.Data.EF.Interfaces;
-using Moba.Data.EF.Interfaces.Repositories;
+using MPS.Data.EF.Context;
+using MPS.Data.EF.Helpers;
+using MPS.Data.EF.Interfaces;
+using MPS.Data.EF.Interfaces.Repositories;
 
-namespace Moba.Data.EF.Services.Repositories
+namespace MPS.Data.EF.Services.Repositories
 {
     public class GenericRepository<TEntity> : IGenericRepository<TEntity>
         where TEntity : class
     {
         #region --Ctro And Init Context--
-        internal MobaDbContext context;
+        internal MPSDbContext context;
         internal DbSet<TEntity> dbSet;
         internal IMapper _mapper;
         private bool IsTrackingEnabled = false;
 
-        public GenericRepository(MobaDbContext context, IMapper mapper)
+        public GenericRepository(MPSDbContext context, IMapper mapper)
         {
             this.context = context;
             this.dbSet = context.Set<TEntity>();

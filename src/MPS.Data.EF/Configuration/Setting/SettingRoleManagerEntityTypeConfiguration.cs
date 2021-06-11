@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Moba.Domain.Entities.Setting;
+using MPS.Domain.Entities.Setting;
 
-namespace Moba.Data.EF.Configuration.Setting
+namespace MPS.Data.EF.Configuration.Setting
 {
     public class SettingRoleManagerEntityTypeConfiguration : IBaseEntityTypeConfiguration<SettingRoleManager>
     {

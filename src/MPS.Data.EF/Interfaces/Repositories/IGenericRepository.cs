@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using Moba.Data.EF.Helpers;
-using Moba.Data.EF.Services;
+using MPS.Data.EF.Helpers;
+using MPS.Data.EF.Services;
 
-namespace Moba.Data.EF.Interfaces.Repositories
+namespace MPS.Data.EF.Interfaces.Repositories
 {
     public interface IGenericRepository<TEntity> where TEntity : class
     {

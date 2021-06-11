@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Moba.Data.EF.Services
+namespace MPS.Data.EF.Services
 {
     public class PagingResult<T>
     {

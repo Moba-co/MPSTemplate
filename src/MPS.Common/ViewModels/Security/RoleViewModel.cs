@@ -1,9 +1,9 @@
-using Moba.Common.Attributes;
-using Moba.Common.ViewModels.Security.RoleManager;
-using Moba.Domain.Entities.Security;
+using MPS.Common.Attributes;
+using MPS.Common.ViewModels.Security.RoleManager;
+using MPS.Domain.Entities.Security;
 using System.Collections.Generic;
 
-namespace Moba.Common.ViewModels.Security
+namespace MPS.Common.ViewModels.Security
 {
     [DtoFor(typeof(Role))]
     public class RoleViewModel

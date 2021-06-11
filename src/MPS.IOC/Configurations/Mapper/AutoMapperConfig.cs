@@ -7,9 +7,9 @@ using System.Linq.Expressions;
 using System.Reflection;
 using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
-using Moba.Common.Attributes;
+using MPS.Common.Attributes;
 
-namespace Moba.IOC.Configurations.Mapper
+namespace MPS.IOC.Configurations.Mapper
 {
     public static class AutoMapperConfig
     {

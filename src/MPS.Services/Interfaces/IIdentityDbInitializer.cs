@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 
-namespace Moba.Services.Interfaces
+namespace MPS.Services.Interfaces
 {
     public interface IIdentityDbInitializer
     {

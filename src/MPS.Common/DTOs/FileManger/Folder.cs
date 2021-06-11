@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
 
-namespace Moba.Common.DTOs.FileManger
+namespace MPS.Common.DTOs.FileManger
 {
     public class Folder
     {

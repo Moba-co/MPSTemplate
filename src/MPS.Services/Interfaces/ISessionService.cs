@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 
-namespace Moba.Services.Interfaces
+namespace MPS.Services.Interfaces
 {
     public interface ISessionService
     {

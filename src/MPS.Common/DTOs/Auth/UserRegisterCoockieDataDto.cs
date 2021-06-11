@@ -1,4 +1,4 @@
-namespace Moba.Common.DTOs.Auth
+namespace MPS.Common.DTOs.Auth
 {
     public class UserRegisterCoockieDataDto
     {

@@ -1,4 +1,4 @@
-namespace Moba.Domain.Enums
+namespace MPS.Domain.Enums
 {
     public enum ImageTypeEnum
     {

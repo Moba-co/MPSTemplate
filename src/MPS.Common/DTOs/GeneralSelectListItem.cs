@@ -1,4 +1,4 @@
-namespace Moba.Common.DTOs
+namespace MPS.Common.DTOs
 {
     public class GeneralSelectListItem
     {

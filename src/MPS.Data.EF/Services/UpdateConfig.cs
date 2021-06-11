@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using Moba.Data.EF.Interfaces;
+using MPS.Data.EF.Interfaces;
 
-namespace Moba.Data.EF.Services
+namespace MPS.Data.EF.Services
 {
     public class UpdateConfig<TEntity> : IUpdateConfig<TEntity>
     {

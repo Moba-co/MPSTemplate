@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Moba.Domain.Core
+namespace MPS.Domain.Core
 {
     public class TitleAttribute : Attribute
     {

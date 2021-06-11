@@ -1,9 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
-using Moba.Common.Attributes;
-using Moba.Domain.Entities.Security;
+using MPS.Common.Attributes;
+using MPS.Domain.Entities.Security;
 
-namespace Moba.Common.ViewModels.Security
+namespace MPS.Common.ViewModels.Security
 {
     public class RegisterWithPhoneViewModel
     {

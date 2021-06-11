@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Moba.Common.DTOs.Enum
+namespace MPS.Common.DTOs.Enum
 {
     public class GeneralSelectEnumList
     {

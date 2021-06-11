@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace Moba.Common.Helpers
+namespace MPS.Common.Helpers
 {
     public class PersianIdentityErrorDescriber : IdentityErrorDescriber
     {

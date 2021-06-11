@@ -1,7 +1,7 @@
 using System;
 using System.Text;
 
-namespace Moba.Common.Helpers
+namespace MPS.Common.Helpers
 {
     public static class Encoders
     {

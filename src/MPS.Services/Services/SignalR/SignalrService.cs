@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Moba.Services.Services.SignalR
+namespace MPS.Services.Services.SignalR
 {
     public class SignalrService : Hub
     {

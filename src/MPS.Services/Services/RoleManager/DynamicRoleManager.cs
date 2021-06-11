@@ -1,6 +1,6 @@
 using System;
 using System.Linq;
-using Moba.Services.Interfaces.RoleManager;
+using MPS.Services.Interfaces.RoleManager;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.AspNetCore.Http;
@@ -9,10 +9,10 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Identity;
-using Moba.Data.EF.Interfaces.UOW;
-using Moba.Domain.Entities.Security;
+using MPS.Data.EF.Interfaces.UOW;
+using MPS.Domain.Entities.Security;
 
-namespace Moba.Services.Services.RoleManager
+namespace MPS.Services.Services.RoleManager
 {
     public class DynamicRoleManager : AuthorizationHandler<DynamicRoleRequirement>
     {

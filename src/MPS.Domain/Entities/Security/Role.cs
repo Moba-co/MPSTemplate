@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
-using Moba.Domain.Core.Services;
+using MPS.Domain.Core.Services;
 using Microsoft.AspNetCore.Identity;
-using Moba.Domain.Core.Interfaces;
+using MPS.Domain.Core.Interfaces;
 
-namespace Moba.Domain.Entities.Security
+namespace MPS.Domain.Entities.Security
 {
     public class Role : IdentityRole<string>, IRegisterer<string,User>, IModifier<string,User> , ISoftDelete, IEntity
     {

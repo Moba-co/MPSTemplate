@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace Moba.Data.EF.Interfaces
+namespace MPS.Data.EF.Interfaces
 {
     public interface IUpdateConfig<TEntity>
     {

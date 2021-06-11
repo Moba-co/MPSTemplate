@@ -1,11 +1,11 @@
 using System;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
-using Moba.Common.Helpers;
-using Moba.Data.EF.Context;
-using Moba.Domain.Entities.Security;
+using MPS.Common.Helpers;
+using MPS.Data.EF.Context;
+using MPS.Domain.Entities.Security;
 
-namespace Moba.IOC.Configurations.Identity
+namespace MPS.IOC.Configurations.Identity
 {
     public static class AddIdentityOptionsExtensions
     {
@@ -29,7 +29,7 @@ namespace Moba.IOC.Configurations.Identity
                         options.SignIn.RequireConfirmedAccount = false;
                         options.User.RequireUniqueEmail = false;
                     })
-                .AddEntityFrameworkStores<MobaDbContext>()
+                .AddEntityFrameworkStores<MPSDbContext>()
                 .AddErrorDescriber<PersianIdentityErrorDescriber>()
                 .AddDefaultTokenProviders();
 

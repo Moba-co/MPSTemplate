@@ -1,6 +1,6 @@
 using System;
 
-namespace Moba.Domain.Core.Interfaces
+namespace MPS.Domain.Core.Interfaces
 {
     public interface IOptionalModifier<TModifierId,TUser>
         where TModifierId: struct

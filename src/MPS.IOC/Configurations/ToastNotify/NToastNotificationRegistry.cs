@@ -1,7 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using NToastNotify;
 
-namespace Moba.IOC.Configurations.ToastNotify
+namespace MPS.IOC.Configurations.ToastNotify
 {
     public static class NToastNotificationRegistry
     {

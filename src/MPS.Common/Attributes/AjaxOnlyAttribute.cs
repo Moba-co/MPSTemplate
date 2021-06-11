@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using Moba.Common.Extenstions;
+using MPS.Common.Extenstions;
 
-namespace Moba.Common.Attributes
+namespace MPS.Common.Attributes
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public class AjaxOnlyAttribute : ActionFilterAttribute
