@@ -38,12 +38,12 @@ namespace MPS.Data.EF.Context
         }
     }
 
-    public class BloggingContextFactory : IDesignTimeDbContextFactory<MPSDbContext>
+    public class MPSContextFactory : IDesignTimeDbContextFactory<MPSDbContext>
     {
         public MPSDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<MPSDbContext>();
-            optionsBuilder.UseSqlServer("Server=.;Database=MPS_db;Trusted_Connection=True;MultipleActiveResultSets=true");
+            optionsBuilder.UseSqlServer("Server = . ; Database = mps_db ; User ID = sa ; Password = admin@123");
 
             return new MPSDbContext(optionsBuilder.Options);
         }

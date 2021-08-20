@@ -19,7 +19,6 @@ namespace MPS.WebApp.MVC.Controllers
             _notification = notification;
             _logger = logger;
         }
-
         public BaseController()
         {
 
@@ -27,7 +26,7 @@ namespace MPS.WebApp.MVC.Controllers
         #endregion
 
         protected void AddToastMessage(string message,ToastrNotificationType type)
-        {   
+        { 
             switch (type)
             {
                 case ToastrNotificationType.Success:

@@ -7,9 +7,11 @@ using MPS.Data.EF.Services.UOW;
 using MPS.Domain.Entities.Security;
 using MPS.IOC.Configurations.Identity;
 using MPS.Services.Interfaces;
+using MPS.Services.Interfaces.EntityServices.Security;
 using MPS.Services.Interfaces.FileManager;
 using MPS.Services.Interfaces.RoleManager;
 using MPS.Services.Services;
+using MPS.Services.Services.EntityServices.Security;
 using MPS.Services.Services.RoleManager;
 using System;
 
@@ -24,8 +26,8 @@ namespace MPS.IOC.Configurations
             services.AddScoped<IFileManager, FileManager>();
             services.AddScoped<IRoleManagerHelper, RoleManagerHelper>();
             services.AddScoped<ISessionService, SessionService>();
-
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<IRoleService, RoleService>();
             //services.AddControllersWithViews().AddNToastNotifyToastr();
             services.AddCustomIdentityServices();
             services.AddMemoryCache();

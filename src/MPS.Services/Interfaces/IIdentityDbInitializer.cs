@@ -14,7 +14,7 @@ namespace MPS.Services.Interfaces
         /// <summary>
         /// seed data
         /// </summary>
-        void SeedData();
+        Task SeedData();
 
         Task<IdentityResult> SeedDatabaseWithAdminUserAsync();
     }

@@ -82,7 +82,7 @@ namespace MPS.WebApp.MVC
                 option.ValidationInterval = TimeSpan.FromSeconds(10);
             });
             //signalr
-            services.AddSignalR();
+            //services.AddSignalR();
             services.AddHttpClient();
         }
 
@@ -116,7 +116,7 @@ namespace MPS.WebApp.MVC
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
-                endpoints.MapHub<SignalrService>("/SignalrService");
+                //endpoints.MapHub<SignalrService>("/SignalrService");
                 endpoints.MapControllerRoute(
                      name: "areas",
                      pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}");

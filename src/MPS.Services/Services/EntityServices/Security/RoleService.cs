@@ -64,12 +64,14 @@ namespace MPS.Services.Services.EntityServices.Security
             var role = await _roleManager.FindByIdAsync(model.Id);
             if (role == null)
                 return new ReturnMessageDto("نقش پیدا نشد", false, 0);
-            var currentUserId = _authService.GetCurrentUserId();
+            
+            //var currentUserId = _authService.GetCurrentUserId();
+            //role.RegistererId = currentUserId;
+            
             role.Name = model.Name;
             role.Description = model.Description;
             role.IsDeleted = model.IsDeleted;
             role.RegisterDate = DateTime.Now;
-            role.RegistererId = currentUserId;
             var result=await _roleManager.UpdateAsync(role);
             if (!result.Succeeded)
             {

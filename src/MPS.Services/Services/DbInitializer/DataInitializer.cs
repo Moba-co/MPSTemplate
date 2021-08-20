@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
@@ -68,12 +70,12 @@ namespace MPS.Services.Services.DbInitializer
         /// <summary>
         /// Adds some default values to the IdentityDb
         /// </summary>
-        public void SeedData()
+        public async Task SeedData()
         {
             using var serviceScope = _scopeFactory.CreateScope();
             var identityDbSeedData = serviceScope.ServiceProvider.GetService<IIdentityDbInitializer>();
             if (identityDbSeedData == null) return;
-            var result = identityDbSeedData.SeedDatabaseWithAdminUserAsync().Result;
+            var result = await identityDbSeedData.SeedDatabaseWithAdminUserAsync();
             if (result == IdentityResult.Failed())
             {
                 throw new InvalidOperationException();
@@ -82,90 +84,106 @@ namespace MPS.Services.Services.DbInitializer
 
         public async Task<IdentityResult> SeedDatabaseWithAdminUserAsync()
         {
-            var adminUserSeed = _adminUserSeedOptions.Value.AdminUserSeed;
-
-            var name = adminUserSeed.Username;
-            var password = adminUserSeed.Password;
-            var email = adminUserSeed.Email;
-            var roleName = adminUserSeed.RoleName;
-            var phoneNumber = adminUserSeed.PhoneNumber;
-            var firstName = adminUserSeed.FirstName;
-            var lastName = adminUserSeed.LastName;
-            var userRoleName = "User";
-            const string thisMethodName = nameof(SeedDatabaseWithAdminUserAsync);
-
-            var adminUser = await _applicationUserManager.FindByNameAsync(name);
-            if (adminUser != null)
+            try
             {
-                _logger.LogInformation($"{thisMethodName}: adminUser already exists.");
-                return IdentityResult.Success;
-            }
+                var adminUserSeed = _adminUserSeedOptions.Value.AdminUserSeed;
+                var name = adminUserSeed.Username;
+                var password = adminUserSeed.Password;
+                var email = adminUserSeed.Email;
+                var roleName = adminUserSeed.RoleName;
+                var phoneNumber = adminUserSeed.PhoneNumber;
+                var firstName = adminUserSeed.FirstName;
+                var lastName = adminUserSeed.LastName;
+                var userRoleName = "User";
+                const string thisMethodName = nameof(SeedDatabaseWithAdminUserAsync);
 
-            //Create the `Admin` Role if it does not exist
-            var adminRole = await _roleManager.FindByNameAsync(roleName);
-            var userRole = await _roleManager.FindByNameAsync(userRoleName);
-            if (adminRole == null)
-            {
-                adminRole = new Role(roleName);
-
-                if (userRole == null)
-                    await _roleManager.CreateAsync(new Role(userRoleName));
-                var adminRoleResult = await _roleManager.CreateAsync(adminRole);
-                if (adminRoleResult == IdentityResult.Failed())
+                var adminUser = await _applicationUserManager.FindByNameAsync(name);
+                if (adminUser != null)
                 {
-                    _logger.LogError($"{thisMethodName}: adminRole CreateAsync failed. ");
+                    _logger.LogInformation($"{thisMethodName}: adminUser already exists.");
+                    //goto CreateRoleCliams;
+                }
+
+                //Create the `Admin` Role if it does not exist
+                var adminRole = await _roleManager.FindByNameAsync(roleName);
+                var userRole = await _roleManager.FindByNameAsync(userRoleName);
+                if (adminRole == null)
+                {
+                    adminRole = new Role(roleName);
+
+                    if (userRole == null)
+                        await _roleManager.CreateAsync(new Role(userRoleName));
+                    var adminRoleResult = await _roleManager.CreateAsync(adminRole);
+                    if (adminRoleResult == IdentityResult.Failed())
+                    {
+                        _logger.LogError($"{thisMethodName}: adminRole CreateAsync failed. ");
+                        return IdentityResult.Failed();
+                    }
+                }
+                else
+                {
+                    _logger.LogInformation($"{thisMethodName}: adminRole already exists.");
+                }
+
+                adminUser = new User
+                {
+                    UserName = name,
+                    Email = email,
+                    EmailConfirmed = true,
+                    LockoutEnabled = true,
+                    FirstName = firstName,
+                    LastName = lastName,
+                    IsDeleted = false,
+                    PhoneNumber = phoneNumber,
+                    IsActive = true,
+                    PhoneNumberConfirmed = true
+                };
+                var adminUserResult = await _applicationUserManager.CreateAsync(adminUser, password);
+                if (adminUserResult == IdentityResult.Failed())
+                {
+                    _logger.LogError($"{thisMethodName}: adminUser CreateAsync failed.");
                     return IdentityResult.Failed();
                 }
-            }
-            else
-            {
-                _logger.LogInformation($"{thisMethodName}: adminRole already exists.");
-            }
 
-            adminUser = new User
-            {
-                UserName = name,
-                Email = email,
-                EmailConfirmed = true,
-                LockoutEnabled = true,
-                FirstName = firstName,
-                LastName = lastName,
-                IsDeleted = false,
-                PhoneNumber = phoneNumber,
-                IsActive = true,
-                PhoneNumberConfirmed = true
-            };
-            var adminUserResult = await _applicationUserManager.CreateAsync(adminUser, password);
-            if (adminUserResult == IdentityResult.Failed())
-            {
-                _logger.LogError($"{thisMethodName}: adminUser CreateAsync failed.");
-                return IdentityResult.Failed();
-            }
+                var setLockoutResult = await _applicationUserManager.SetLockoutEnabledAsync(adminUser, enabled: false);
+                if (setLockoutResult == IdentityResult.Failed())
+                {
+                    _logger.LogError($"{thisMethodName}: adminUser SetLockoutEnabledAsync failed.");
+                    return IdentityResult.Failed();
+                }
 
-            var setLockoutResult = await _applicationUserManager.SetLockoutEnabledAsync(adminUser, enabled: false);
-            if (setLockoutResult == IdentityResult.Failed())
-            {
-                _logger.LogError($"{thisMethodName}: adminUser SetLockoutEnabledAsync failed.");
-                return IdentityResult.Failed();
-            }
+                var addToRoleResult = await _applicationUserManager.AddToRoleAsync(adminUser, adminRole.Name);
+                if (addToRoleResult == IdentityResult.Failed())
+                {
+                    _logger.LogError($"{thisMethodName}: adminUser AddToRoleAsync failed.");
+                    return IdentityResult.Failed();
+                }
 
-            var addToRoleResult = await _applicationUserManager.AddToRoleAsync(adminUser, adminRole.Name);
-            if (addToRoleResult == IdentityResult.Failed())
-            {
-                _logger.LogError($"{thisMethodName}: adminUser AddToRoleAsync failed.");
-                return IdentityResult.Failed();
-            }
+                //await _applicationUserManager.AddOrUpdateClaimsAsync(adminUser.Id, "DynamicPermission",
+                //    new List<string>
+                //    {"Admin:DynamicAccess:Index", "Admin:UserManager:Index", "Admin:UserManager:RenderUser"});
+                
+            //CreateRoleCliams :
+                // get the web app assembly for get actions and controllers name
+                var assemblies = AppDomain.CurrentDomain.GetAssemblies();
+                var controllerList= _roleService
+                    .GetActionAndControllerName(assemblies.FirstOrDefault(a => a.GetName().FullName.Contains("MPS.WebApp.MVC")),adminRole.Id);
 
-            //await _applicationUserManager.AddOrUpdateClaimsAsync(adminUser.Id, "DynamicPermission",
-            //    new List<string>
-            //        {"Admin:DynamicAccess:Index", "Admin:UserManager:Index", "Admin:UserManager:RenderUser"});
-            var controllerList= _roleService.GetActionAndControllerName(Assembly.GetExecutingAssembly(),adminRole.Id);
-            foreach (var item in controllerList.ActionAndControllerNames)
-                item.IsSelected = true;
-            controllerList.Id = adminRole.Id;
-            controllerList.Description = "مدیر گروه";
-           await _roleService.EditAsync(controllerList);
-            return IdentityResult.Success;
+                foreach (var item in controllerList.ActionAndControllerNames)
+                    item.IsSelected = true;
+
+                controllerList.Id = adminRole.Id;
+                controllerList.Description = "مدیر گروه";
+                controllerList.Name = "admin";
+                
+                await _roleService.EditAsync(controllerList);
+                return IdentityResult.Success;
+            }
+            catch (System.Exception ex) 
+            {
+                _logger.LogError($"{ex.InnerException?.Message}");
+                throw;
+            }
         }
     }
 }
