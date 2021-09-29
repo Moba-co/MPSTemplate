@@ -42,8 +42,12 @@ namespace MPS.Data.EF.Context
     {
         public MPSDbContext CreateDbContext(string[] args)
         {
+            IConfigurationRoot configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile(@Directory.GetCurrentDirectory() + "/../MPS.WebApp.MVC/appsettings.json")
+                .Build();
             var optionsBuilder = new DbContextOptionsBuilder<MPSDbContext>();
-            optionsBuilder.UseSqlServer("Server = . ; Database = mps_db ; User ID = sa ; Password = admin@123");
+            optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
 
             return new MPSDbContext(optionsBuilder.Options);
         }
