@@ -46,7 +46,7 @@ namespace MPS.Data.EF.Context
         {
             IConfigurationRoot configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile(@Directory.GetCurrentDirectory() + "/../MPS.WebApp.MVC/appsettings.json")
+                .AddJsonFile(@Directory.GetCurrentDirectory() + "/../MPS.WebApp.MVC/appsettings.development.json")
                 .Build();
             var optionsBuilder = new DbContextOptionsBuilder<MPSDbContext>();
             optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
